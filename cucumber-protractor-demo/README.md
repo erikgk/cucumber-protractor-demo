@@ -4,9 +4,11 @@ Demonstrates a setup of Cucumber, Protractor, Webdriver (standalone). Using addi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
-## Getting started
+## Install
 
 Run `npm install` to setup all dependencies in the project. This also runs `webdriver-manager update` to make sure webdriver is setup. If the command fails, please check the installation of webdriver on your local machine.
+
+If you plan on contributing `npm install -g commitizen` or if you have NPM 5.2+ `npx git-cz`
 
 ## Development server
 
