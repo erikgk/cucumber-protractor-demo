@@ -1,7 +1,7 @@
-const { element }  = require('protractor');
+import { element, by } from 'protractor';
 
-module.exports = {
+export default {
     get app() {
         return element(by.tagName('todo-app'));
     }
-}
+};

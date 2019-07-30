@@ -26,7 +26,7 @@ exports.config = {
   cucumberOpts: {
     strict: true,
     require: [
-      './steps/**/*.js'
+      './steps/**/*.ts'
     ],
     format: [
       'json:e2e/test-reports/json/cucumber-test-results.json'
