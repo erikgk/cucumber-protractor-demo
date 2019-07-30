@@ -2,31 +2,37 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
-const { SpecReporter } = require('jasmine-spec-reporter');
-
 /**
  * @type { import("protractor").Config }
  */
 exports.config = {
+  debug: false,
   allScriptsTimeout: 11000,
   specs: [
-    './src/**/*.e2e-spec.ts'
+    './features/**/*.feature'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    browserName: 'chrome',
+    shardTestFiles: true,
+    maxInstances: 4,
+    chromeOptions: {
+      args: ['--window-size=1280,900', "--incognito"]
+    },
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
-  framework: 'jasmine',
-  jasmineNodeOpts: {
-    showColors: true,
-    defaultTimeoutInterval: 30000,
-    print: function() {}
+  baseUrl: 'http://todomvc.com/examples/angular2/',
+  framework: 'custom',
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
+  cucumberOpts: {
+    strict: true,
+    require: [
+      './steps/**/*.js'
+    ],
+    format: [
+      'json:e2e/test-reports/json/cucumber-test-results.json'
+    ],
+    tags: [ "~@fail" ]
   },
   onPrepare() {
-    require('ts-node').register({
-      project: require('path').join(__dirname, './tsconfig.json')
-    });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
   }
 };
