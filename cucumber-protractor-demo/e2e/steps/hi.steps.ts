@@ -1,11 +1,7 @@
 
 
 import { browser } from 'protractor';
-
-
 import { Then } from 'cucumber';
-
-
 
 import todoAppPO from '../page-objects/todo-app.po';
 

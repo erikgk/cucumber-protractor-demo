@@ -7,7 +7,7 @@
  */
 exports.config = {
   debug: false,
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 45000,
   specs: [
     './features/**/*.feature'
   ],
