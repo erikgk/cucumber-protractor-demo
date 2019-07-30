@@ -26,7 +26,7 @@ exports.config = {
   cucumberOpts: {
     strict: true,
     require: [
-      './steps/**/*.ts'
+      './**/*.ts'
     ],
     format: [
       'json:e2e/test-reports/json/cucumber-test-results.json'
@@ -34,5 +34,9 @@ exports.config = {
     tags: [ "~@fail" ]
   },
   onPrepare() {
+    // Register so compiled code is found and executed
+    require('ts-node').register({
+      project: require('path').join(__dirname, './tsconfig.json')
+    });
   }
 };
