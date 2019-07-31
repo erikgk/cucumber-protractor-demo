@@ -1,5 +1,9 @@
 import { element, by } from 'protractor';
 
+import headerPO from './header.po';
+import footerPO from './footer.po';
+import mainPO from './main.po';
+
 function app() {
     return element(by.tagName('todo-app'));
 }
@@ -8,19 +12,13 @@ export default {
     get app() {
         return app();
     },
-    get appHeading() {
-        return app().element(by.tagName('h1'));
+    get header() {
+        return headerPO(app());
     },
-    get todoList() {
-        return app().element(by.css('ul[class="todo-list"]'));
+    get main() {
+        return mainPO(app());
     },
-    get newTodoText() {
-        return app().element(by.tagName('header input'));
-    },
-    get todoListItems() {
-        return app().all(by.css('ul[class="todo-list"] li'));
-    },
-    get itemsLeft() {
-        return app().element(by.css('footer span[class="todo-count"]'));
+    get footer() {
+        return footerPO(app());
     }
 };
