@@ -15,9 +15,8 @@ export default {
   // Slow type the text in new todo item input since angular 2 can trip over
   // input that is too fast and therefore miss characters while typing
   async slowType(element: ElementFinder, value: string) {
-    for (const letter of [...value]) {
-      await element.sendKeys(letter);
-      await browser.sleep(50);
+    for (const char of value) {
+      await element.sendKeys(char);
     }
   }
 };
