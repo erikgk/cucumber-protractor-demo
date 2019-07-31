@@ -1,26 +1,23 @@
-# CucumberProtractorDemo
+# cucumber-protractor-demo
 
 Demonstrates a setup of Cucumber, Protractor, Webdriver (standalone). Using additional dependencies like a HTML reporting tool.
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
 ## Install
 
 Run `npm install` to setup all dependencies in the project. This also runs `webdriver-manager update` to make sure webdriver is setup. If the command fails, please check the installation of webdriver on your local machine.
 
-If you plan on contributing `npm install -g commitizen` or if you have NPM 5.2+ `npx git-cz`
-
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng e2e` or `npm run protractor` (identical implementation) to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Run this demo project wihout serving the app
+## About the features
 
-This demo includes the Angular framework but does not run test anything locally. So instead of `npm run e2e` it is recommended to run `npm run protractor`. This skips the build of the app. 
+They were setup to demonstrate approaches to problems so they are not meant as a complete test suite.
 
-Note: you may require a globally installed protractor. 
-`npm install -g protractor` 
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Used approaches are
+- Gherkin feature files
+- Default step matchers with typing and optional sections
+- xPath step matchers to match more natural language
+- Datatable with a step definition
+- Page Object Model (POM) is used
+- Chai as promised assertion library
