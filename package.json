@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "tslint -p ./",
     "pree2e": "npm run cleanreports",
     "e2e": "ng e2e",
     "preprotractor": "npm run cleanreports",
