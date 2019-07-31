@@ -12,6 +12,7 @@ exports.config = {
   * with the actual reason why the test code is failing to run*/
   debug: false,
   allScriptsTimeout: 45000,
+  getPageTimeout: 30000,
   specs: [
     './features/**/*.feature'
   ],

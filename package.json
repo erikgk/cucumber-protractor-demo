@@ -9,6 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "protractor": "protractor e2e/protractor.conf.js",
     "confighooks": "mkdir -p .git/hooks && cp hooks/* .git/hooks"
   },
   "private": true,

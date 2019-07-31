@@ -6,7 +6,7 @@ import todoAppPO from '../page-objects/todo-app.po';
 
 chai.use(chaiaspromised);
 
-Then('Say Hi', async () => {
+Then('Say Hi', {timeout: 4 * 5000}, async () => {
     await browser.get('http://todomvc.com/examples/angular2/');
     await chai.expect(todoAppPO.app.isDisplayed()).to.eventually.be.true;
     await chai.expect(todoAppPO.appHeading.getText()).to.eventually.contain('todos');
