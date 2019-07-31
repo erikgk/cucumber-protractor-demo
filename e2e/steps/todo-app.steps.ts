@@ -12,6 +12,17 @@ Given('I have an empty todo list', async () => {
     await chai.expect(todoAppPO.main.todoList.isPresent()).to.eventually.be.false;
 });
 
+Given('I have the following tasks on my todo list', { timeout: 4 * 5000 }, async (datatable) => {
+    async function processTasks(tasks) {
+        for (const task of tasks) {
+            await elementHelperPO.slowType(todoAppPO.header.newTodoText, task.text);
+            await todoAppPO.header.newTodoText.sendKeys(protractor.Key.ENTER);
+            if (task.status === 'completed') { await todoAppPO.main.completeTodoListItem(task.text).click(); }
+        }
+    }
+    await processTasks(datatable.hashes());
+});
+
 When('I add a todo item with text {string}', async (todoText) => {
     await chai.expect(todoAppPO.header.newTodoText.isPresent()).to.eventually.be.true;
     await elementHelperPO.slowType(todoAppPO.header.newTodoText, todoText);
@@ -42,6 +53,6 @@ Then(/^I (can|cannot) clear completed tasks$/, async (expected) => {
 });
 
 // A debug step while developing to add a feature step to wait
-Then('I wait a bit', {timeout: 4 * 5000}, async () => {
+Then('I wait a bit', { timeout: 4 * 5000 }, async () => {
     await browser.sleep(19000);
 });
