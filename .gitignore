@@ -34,7 +34,8 @@ testem.log
 /typings
 
 # test reports
-test-reports
+e2e/test-reports/json/*
+!e2e/test-reports/json/.gitkeep 
 
 # System Files
 .DS_Store
