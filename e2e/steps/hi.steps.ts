@@ -1,12 +1,11 @@
-
-
 import { browser } from 'protractor';
 import { Then } from 'cucumber';
 
 import todoAppPO from '../page-objects/todo-app.po';
 
-const chai = require('chai');
-chai.use(require('chai-as-promised'));
+import * as chai from 'chai';
+import * as chaiaspromised from 'chai-as-promised';
+chai.use(chaiaspromised);
 
 Then('Say Hi', async () => {
     await browser.get('http://todomvc.com/examples/angular2/');
