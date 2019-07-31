@@ -7,6 +7,19 @@ RED='\033[1;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
+#
+# Prevent commit on master
+#
+currentBranch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+
+if [ "$currentBranch" == "master" ]; then
+  echo "${RED}\nDo not commit to master!${NC}\n"
+  exit 1
+fi
+
+#
+# Lint the code
+#
 echo "pre-push hook: lint"
 
 # Run lint and get the output and return code
