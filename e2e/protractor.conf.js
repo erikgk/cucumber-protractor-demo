@@ -12,6 +12,7 @@ exports.config = {
   * with the actual reason why the test code is failing to run*/
   debug: false,
   allScriptsTimeout: 45000,
+  getPageTimeout: 30000,
   specs: [
     './features/**/*.feature'
   ],
@@ -20,7 +21,7 @@ exports.config = {
     shardTestFiles: true,
     maxInstances: 4,
     chromeOptions: {
-      args: ['--window-size=1280,900', "--incognito"]
+      args: ['--window-size=700,700', "--incognito"]
     },
   },
   directConnect: true,
@@ -36,8 +37,17 @@ exports.config = {
     format: [
       'json:e2e/test-reports/json/cucumber-test-results.json'
     ],
-    tags: [ "~@fail" ]
+    tags: ["~@fail"]
   },
+  plugins: [{
+    package: 'protractor-multiple-cucumber-html-reporter-plugin',
+    options: {
+      automaticallyGenerateReport: true,
+      removeExistingJsonReportFile: true,
+      reportPath: 'e2e/test-reports/html',
+      reportName: 'todoMVC e2e results'
+    }
+  }],
   onPrepare() {
     // Register to compile typescript files when protractor starts running
     require('ts-node').register({
