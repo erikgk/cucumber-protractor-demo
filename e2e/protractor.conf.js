@@ -19,7 +19,7 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     shardTestFiles: true,
-    maxInstances: 4,
+    maxInstances: 2,
     chromeOptions: {
       args: ['--window-size=700,700', "--incognito"]
     },
