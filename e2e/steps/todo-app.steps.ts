@@ -52,6 +52,10 @@ Then(/^I (can|cannot) clear completed tasks$/, async (expected) => {
     await chai.expect(todoAppPO.footer.clearCompletedBtn.isPresent()).to.eventually.equal(buttonPresence);
 });
 
+When('I clear all completed tasks', async () => {
+    await todoAppPO.footer.clearCompletedBtn.click();
+});
+
 // A debug step while developing to add a feature step to wait
 Then('I wait a bit', { timeout: 4 * 5000 }, async () => {
     await browser.sleep(19000);
