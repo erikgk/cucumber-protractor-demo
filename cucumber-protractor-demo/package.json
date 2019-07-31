@@ -2,13 +2,14 @@
   "name": "cucumber-protractor-demo",
   "version": "0.0.1",
   "scripts": {
-    "postinstall": "webdriver-manager update",
+    "postinstall": "npm run confighooks && webdriver-manager update",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "confighooks": "mkdir -p .git/hooks && cp hooks/* .git/hooks"
   },
   "private": true,
   "dependencies": {

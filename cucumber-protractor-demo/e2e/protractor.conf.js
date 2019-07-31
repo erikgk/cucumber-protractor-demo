@@ -6,6 +6,10 @@
  * @type { import("protractor").Config }
  */
 exports.config = {
+  /* debug: false (default). If you see a starting test with open browsers
+  * and no test is excuted, set debug: true, maxinstances: 1 and 
+  * shardTestFiles: false. Console should now show debug information
+  * with the actual reason why the test code is failing to run*/
   debug: false,
   allScriptsTimeout: 45000,
   specs: [
@@ -26,7 +30,8 @@ exports.config = {
   cucumberOpts: {
     strict: true,
     require: [
-      './**/*.ts'
+      './**/*.ts',
+      './**/*.js'
     ],
     format: [
       'json:e2e/test-reports/json/cucumber-test-results.json'
@@ -34,7 +39,7 @@ exports.config = {
     tags: [ "~@fail" ]
   },
   onPrepare() {
-    // Register so compiled code is found and executed
+    // Register to compile typescript files when protractor starts running
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
