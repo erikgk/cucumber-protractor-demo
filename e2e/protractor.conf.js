@@ -14,14 +14,19 @@ exports.config = {
   allScriptsTimeout: 45000,
   getPageTimeout: 30000,
   specs: [
-    './features/**/*.feature'
+    'features/*.feature'
   ],
   capabilities: {
     browserName: 'chrome',
     shardTestFiles: true,
-    maxInstances: 2,
+    maxInstances: 3,
     chromeOptions: {
-      args: ['--window-size=700,700', "--incognito"]
+      args: [ 
+        '--window-size=700,700', 
+        '--headless',
+        '--disable-gpu',
+        '--disable-dev-shm-usage', 
+        '--incognito']
     },
   },
   directConnect: true,
