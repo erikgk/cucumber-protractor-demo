@@ -1,10 +1,9 @@
 import { browser } from 'protractor';
 import { Then } from 'cucumber';
-
-import todoAppPO from '../page-objects/todo-app.po';
-
 import * as chai from 'chai';
 import * as chaiaspromised from 'chai-as-promised';
+import todoAppPO from '../page-objects/todo-app.po';
+
 chai.use(chaiaspromised);
 
 Then('Say Hi', async () => {
