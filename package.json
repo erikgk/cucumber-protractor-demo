@@ -2,16 +2,18 @@
   "name": "cucumber-protractor-demo",
   "version": "0.0.1",
   "scripts": {
-    "postinstall": "npm run confighooks && webdriver-manager update",
+    "postinstall": "npm run setuphooks && webdriver-manager update",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "pree2e": "npm run cleanreports",
     "e2e": "ng e2e",
-    "preprotractor": "rm -f e2e/test-reports/json/*.json",
+    "preprotractor": "npm run cleanreports",
     "protractor": "protractor e2e/protractor.conf.js",
-    "confighooks": "mkdir -p .git/hooks && cp hooks/* .git/hooks"
+    "setuphooks": "mkdir -p .git/hooks && cp hooks/* .git/hooks",
+    "cleanreports": "rm -f e2e/test-reports/json/*.json && rm -rf e2e/test-reports/html/*"
   },
   "private": true,
   "dependencies": {
