@@ -4,6 +4,7 @@ import * as chai from 'chai';
 import * as chaiaspromised from 'chai-as-promised';
 
 import todoAppPO from '../page-objects/todo-app.po';
+import elementHelperPO from '../page-objects/element-helper.po';
 
 chai.use(chaiaspromised);
 
@@ -12,7 +13,8 @@ Given('I have an empty todo list', async () => {
 });
 
 When('I add a todo item with text {string}', async (todoText) => {
-    await todoAppPO.header.newTodoText.sendKeys(todoText);
+    await chai.expect(todoAppPO.header.newTodoText.isPresent()).to.eventually.be.true;
+    await elementHelperPO.slowType(todoAppPO.header.newTodoText, todoText);
     await todoAppPO.header.newTodoText.sendKeys(protractor.Key.ENTER);
 });
 
