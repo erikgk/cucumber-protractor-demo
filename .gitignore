@@ -36,6 +36,8 @@ testem.log
 # test reports
 e2e/test-reports/json/*
 !e2e/test-reports/json/.gitkeep 
+e2e/test-reports/html/*
+!e2e/test-reports/html/.gitkeep 
 
 # System Files
 .DS_Store
