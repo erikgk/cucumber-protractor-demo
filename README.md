@@ -1,6 +1,7 @@
 # cucumber-protractor-demo
 
 Demonstrates a setup of Cucumber, Protractor, Webdriver (standalone). Using additional dependencies like a HTML reporting tool.
+The tests run on **TodoMVC** specically the Angular2 version on http://todomvc.com/examples/angular2/
 
 ## Install
 
@@ -8,7 +9,11 @@ Run `npm install` to setup all dependencies in the project. This also runs `webd
 
 ## Running end-to-end tests
 
-Run `ng e2e` or `npm run protractor` (identical implementation) to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm run e2e` which runs on chrome to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+There are two configurations available:
+- Chrome `npm run e2e:chrome`
+- Firefox `npm run e2e:firefox`
 
 ## About the features
 
