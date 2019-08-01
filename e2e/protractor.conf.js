@@ -18,7 +18,7 @@ exports.config = {
   ],
   capabilities: {
     browserName: 'chrome',
-    shardTestFiles: true,
+    shardTestFiles: false,
     maxInstances: 3,
     chromeOptions: {
       args: [
