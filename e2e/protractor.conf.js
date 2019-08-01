@@ -7,7 +7,7 @@
  */
 exports.config = {
   /* debug: false (default). If you see a starting test with open browsers
-  * and no test is excuted, set debug: true, maxinstances: 1 and 
+  * and no test is excuted, set debug: true, maxinstances: 1 and
   * shardTestFiles: false. Console should now show debug information
   * with the actual reason why the test code is failing to run*/
   debug: false,
@@ -21,11 +21,11 @@ exports.config = {
     shardTestFiles: true,
     maxInstances: 3,
     chromeOptions: {
-      args: [ 
-        '--window-size=700,700', 
+      args: [
+        '--window-size=700,700',
         '--headless',
         '--disable-gpu',
-        '--disable-dev-shm-usage', 
+        '--disable-dev-shm-usage',
         '--incognito']
     },
   },
