@@ -4,6 +4,6 @@ Feature: Add todo
     So that I can manage my tasks easily
 
     Scenario: Add one todo to the list
-        Given I have an empty todo list
-        When I add a todo item with text "My First Todo"
-        Then I have 1 uncomplete item on my todo list
+        Given the user has an empty todo list
+        When the user adds a todo item with text "My First Todo"
+        Then there is 1 uncomplete item on the todo list
